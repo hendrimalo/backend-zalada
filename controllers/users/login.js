@@ -8,8 +8,8 @@ const v = new Validator();
 
 module.exports = async (req, res) => {
   const schema = {
-    username: 'string|empty:false',
-    password: 'string|empty:false',
+    username: 'string|empty:false|min:6|max:16',
+    password: 'string|empty:false|min:6|max:16',
   };
 
   const validate = v.validate(req.body, schema);
